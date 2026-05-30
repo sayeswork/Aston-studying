@@ -5,9 +5,10 @@ public class Lesson22Task02 {
 
     public static void checkSumSign() {
         int a = 12;
-        int b = 22;
+        int b = -22;
+        int sum = a + b;
 
-        if (a + b >= 0) {
+        if (sum >= 0) {
             System.out.println("Сумма положительная");
         } else {
             System.out.println("Сумма отрицательная");
