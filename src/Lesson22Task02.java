@@ -3,6 +3,7 @@ public class Lesson22Task02 {
         checkSumSign();
     }
 
+    // Zadanie 2: proverit znak summy dvuh chisel.
     public static void checkSumSign() {
         int a = 12;
         int b = -22;

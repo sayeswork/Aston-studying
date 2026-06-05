@@ -1,4 +1,4 @@
-import javax.xml.crypto.dsig.spec.XSLTTransformParameterSpec;
+import java.util.Arrays;
 
 public class Lesson22Task01 {
 
@@ -10,7 +10,13 @@ public class Lesson22Task01 {
         System.out.println(checkSumBetween10And20(10, 10));
         printNumberSign(-12);
         System.out.println(checknuNumberSign(-5));
-        printStringSeveralTimes("Hello", 3);
+        printStringSeveralTimes("Nothing", 3);
+        System.out.println(checkLeapYear(2000));
+        invertArrayElements();
+        fillArrayFrom1To100();
+        multiplyNumbersLessThanSix();
+
+
     }
 
     // Задание 1: вывести три слова в столбец.
@@ -25,67 +31,117 @@ public class Lesson22Task01 {
         int a = 12;
         int b = -22;
         int sum = a + b;
-
         if (sum >= 0) {
             System.out.println("Сумма положительная");
         } else {
             System.out.println("Сумма отрицательная");
         }
     }
-    //Задание 3:
+
     public static void printColor() {
         int value = 144;
-        if (value <=0) {
+        if (value <= 0) {
             System.out.println("Красный");
-        }
-        else if (value < 100) {
+        } else if (value <= 100) {
             System.out.println("Желтый");
-        }
-        else {
+        } else {
             System.out.println("Зеленый");
         }
     }
+
     public static void compareNumbers() {
         int a = 255;
         int b = 15;
         if (a >= b) {
             System.out.println("a >= b");
-        }
-        else if (a < b) {
+        } else
             System.out.println("a < b");
-        }
     }
 
     public static boolean checkSumBetween10And20(int a, int b) {
         int sum = a + b;
-        if (sum >= 10 && sum <=20) {
+        if (sum >= 10 && sum <= 20) {
             return true;
-        }
-        else {
+        } else {
             return false;
-
         }
+    }
 
-    }public static void printNumberSign(int a) {
+    public static void printNumberSign(int a) {
         if (a < 0) {
             System.out.println("Отрицательное число");
-        }
-        else {
+        } else {
             System.out.println("Положительное число");
         }
     }
+
     public static boolean checknuNumberSign(int a) {
         if (a < 0) {
-            return true;}
-        else {
+            return true;
+        } else {
             return false;
         }
     }
 
     public static void printStringSeveralTimes(String text, int count) {
         for (int i = count; i > 0; i--) {
-        System.out.println(text);
-        };
+            System.out.println(text);
+        }
+    }
+
+    public static boolean checkLeapYear(int year) {
+        if (year % 400 == 0) {
+            return true;
+        }
+        if (year % 100 == 0) {
+            return false;
+        }
+        if (year % 4 == 0) {
+            return true;
+        }
+        return false;
+    }
+
+    public static void invertArrayElements() {
+        int[] array = {1, 1, 0, 0, 1, 0, 1, 1, 0, 0};
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == 0) {
+                array[i] = 1;
+            } else {
+                array[i] = 0;
+            }
+        }
+
+        System.out.print("Изменённый массив(задание 11): ");
+        for (int i = 0; i < array.length; i++) {
+        }
+            System.out.println(Arrays.toString(array));
+    }
+    public static void fillArrayFrom1To100() {
+        int[] array = new int[100];
+        for (int i = 0; i < array.length; i++) {
+            array[i] = i + 1;
+        }
+        System.out.println(Arrays.toString(array));
+    }
+
+    public static void multiplyNumbersLessThanSix() {
+        int[] array = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] < 6) {
+                array[i] = array[i] * 2;
+            }
+        }
+
+        System.out.print("Изменённый массив(задание 12): ");
+        for (int i = 0; i < array.length; i++) {
+            //System.out.print(array[i] + " ");
+        }
+        System.out.println(Arrays.toString(array));
+
+
     }
 
 }
+
+
