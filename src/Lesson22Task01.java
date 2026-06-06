@@ -9,14 +9,14 @@ public class Lesson22Task01 {
         compareNumbers();
         System.out.println(checkSumBetween10And20(10, 10));
         printNumberSign(-12);
-        System.out.println(checknuNumberSign(-5));
+        System.out.println(isNegative(-5));
         printStringSeveralTimes("Nothing", 3);
         System.out.println(checkLeapYear(2000));
         invertArrayElements();
         fillArrayFrom1To100();
         multiplyNumbersLessThanSix();
-
-
+        fillDiagonals();
+        System.out.println(Arrays.toString(createFilledArray(3, 5)));
     }
 
     // Задание 1: вывести три слова в столбец.
@@ -31,6 +31,7 @@ public class Lesson22Task01 {
         int a = 12;
         int b = -22;
         int sum = a + b;
+
         if (sum >= 0) {
             System.out.println("Сумма положительная");
         } else {
@@ -40,6 +41,7 @@ public class Lesson22Task01 {
 
     public static void printColor() {
         int value = 144;
+
         if (value <= 0) {
             System.out.println("Красный");
         } else if (value <= 100) {
@@ -52,10 +54,12 @@ public class Lesson22Task01 {
     public static void compareNumbers() {
         int a = 255;
         int b = 15;
+
         if (a >= b) {
             System.out.println("a >= b");
-        } else
+        } else {
             System.out.println("a < b");
+        }
     }
 
     public static boolean checkSumBetween10And20(int a, int b) {
@@ -75,16 +79,12 @@ public class Lesson22Task01 {
         }
     }
 
-    public static boolean checknuNumberSign(int a) {
-        if (a < 0) {
-            return true;
-        } else {
-            return false;
-        }
+    public static boolean isNegative(int a) {
+        return a < 0;
     }
 
     public static void printStringSeveralTimes(String text, int count) {
-        for (int i = count; i > 0; i--) {
+        for (int i = 0; i < count; i++) {
             System.out.println(text);
         }
     }
@@ -104,6 +104,7 @@ public class Lesson22Task01 {
 
     public static void invertArrayElements() {
         int[] array = {1, 1, 0, 0, 1, 0, 1, 1, 0, 0};
+
         for (int i = 0; i < array.length; i++) {
             if (array[i] == 0) {
                 array[i] = 1;
@@ -112,36 +113,56 @@ public class Lesson22Task01 {
             }
         }
 
-        System.out.print("Изменённый массив(задание 11): ");
-        for (int i = 0; i < array.length; i++) {
-        }
-            System.out.println(Arrays.toString(array));
+        System.out.print("Измененный массив (задание 10): ");
+        System.out.println(Arrays.toString(array));
     }
+
     public static void fillArrayFrom1To100() {
         int[] array = new int[100];
+
         for (int i = 0; i < array.length; i++) {
             array[i] = i + 1;
         }
+
         System.out.println(Arrays.toString(array));
     }
 
     public static void multiplyNumbersLessThanSix() {
         int[] array = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
+
         for (int i = 0; i < array.length; i++) {
             if (array[i] < 6) {
-                array[i] = array[i] * 2;
+                array[i] *= 2;
             }
         }
 
-        System.out.print("Изменённый массив(задание 12): ");
-        for (int i = 0; i < array.length; i++) {
-            //System.out.print(array[i] + " ");
-        }
+        System.out.print("Измененный массив (задание 12): ");
         System.out.println(Arrays.toString(array));
-
-
     }
 
+    public static void fillDiagonals() {
+        int[][] array = new int[4][4];
+
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[i].length; j++) {
+                if (i == j || i + j == array.length - 1) {
+                    array[i][j] = 1;
+                }
+
+                System.out.print(array[i][j] + " ");
+            }
+
+            System.out.println();
+        }
+    }
+
+    public static int[] createFilledArray(int len, int initialValue) {
+        int[] array = new int[len];
+
+        for (int i = 0; i < array.length; i++) {
+            array[i] = initialValue;
+        }
+
+        return array;
+    }
 }
-
-
