@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class Lesson22Task01 {
+public class Lesson22 {
 
     public static void main(String[] args) {
         printThreeWords();
