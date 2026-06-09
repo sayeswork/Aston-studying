@@ -54,9 +54,9 @@ public class Main {
                 4999,
                 true
         );
-
-        for (int i = 0; i < productsArray.length; i++) {
-            productsArray[i].printInfo();
+        //Решил добавить For each
+        for (Product product : productsArray) {
+            product.printInfo();
         }
 
         System.out.println("Задание 3. Парк и аттракционы");
