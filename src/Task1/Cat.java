@@ -15,7 +15,7 @@ public class Cat extends Animal {
     @Override
     public void run(int distance) {
         if (distance <= 200) {
-            System.out.println(name + " пробежал " + distance + " м.");
+            System.out.println(name + " пробежала " + distance + " м.");
         } else {
             System.out.println(name + " не может пробежать " + distance + " м. Максимум: 200 м.");
         }
@@ -29,14 +29,14 @@ public class Cat extends Animal {
     public void eat(Bowl bowl, int amount) {
         if (bowl.takeFood(amount)) {
             satiety = true;
-            System.out.println(name + " поел и теперь сыт.");
+            System.out.println(name + " поела и теперь сыта.");
         } else {
-            System.out.println(name + " не поел. В миске мало еды.");
+            System.out.println(name + " не поела. В миске мало еды.");
         }
     }
 
     public void printSatiety() {
-        System.out.println(name + " сыт: " + satiety);
+        System.out.println(name + " сыта: " + satiety);
     }
 
     public static int getCatCount() {
