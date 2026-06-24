@@ -1,5 +1,6 @@
 # IntelliJ / Java trash
 out/
+target/
 *.class
 .idea/
 *.iml
